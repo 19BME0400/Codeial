@@ -1,23 +1,23 @@
 
 <header>
     <div class="nav">
-    <ul>
+    <ul class="top">
         <% if(locals.user)  {%>
 
-            <li><a href="/users/profile" class="sign"><%= user.name %></a></li>
-            <li>
+            <li class="lis"><a href="/users/profile" class="sign"><%= user.name %></a></li>
+            <li class="lis">
                 <a href="/users/sign-out" class="sign">Sign out</a>
             </li>
 
         <% } else {%>
-            <li>
+            <li class="lis">
                 Codeial
             </li>
             <span>
-            <li>
+            <li class="lis">
                 <a href="/users/sign-in" class="sign">Sign In</a>
             </li>
-            <li>
+            <li class="lis">
                 <a href="/users/sign-up" class="sign">Sign Up</a>
             </li>
         </span>
