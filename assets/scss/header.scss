@@ -1,0 +1,30 @@
+
+.nav {
+    background-color: #1782f8;
+    margin-top: -15px;
+    height: 40px;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+li {
+    list-style: none;
+    display: inline;
+    font-size: 2.0rem;
+    color: white;
+}
+
+li a {
+    vertical-align: middle;
+}
+
+.sign {
+    margin-right: 15px;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    
+}
