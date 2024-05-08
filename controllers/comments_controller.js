@@ -2,7 +2,9 @@ const Comment = require('../models/comment');
 const Post = require('../models/post'); 
 
 module.exports.create = async function(req, res) {
-    let post = await Post.findById(req.body.post);
+    
+    try{
+        let post = await Post.findById(req.body.post);
     if(post) {
         let com = await Comment.create({
             content: req.body.content,
@@ -14,6 +16,11 @@ module.exports.create = async function(req, res) {
 
         res.redirect('/');
     }
+    } catch(err){
+        console.log('Error', err);
+        return;
+    }
+    
 }
 
 module.exports.destroy = async function(req, res){

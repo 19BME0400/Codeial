@@ -5,9 +5,8 @@ module.exports.home = async function(req, res){
     // console.log(req.cookies);
     // res.cookie('user_id', 25);
     
-    
-    // populate the user of each post
-    let posts = await Post.find({})
+    try{
+        let posts = await Post.find({})
     .populate('user')
     .populate({
         path: 'comments',
@@ -16,12 +15,17 @@ module.exports.home = async function(req, res){
         }
     })
     let allUsers = await User.find({})
-    .exec()
     return res.render('home', {
         title: "Codeial | Home",
         posts: posts,
         all_users: allUsers
     });
+    } catch(err) {
+        console.log('Error', err);
+        return;
+    }
+    // populate the user of each post
+    
 }
 
 // module.exports.actionName = function(req, res){}
